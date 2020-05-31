@@ -1,4 +1,4 @@
-package com.anima.anima;
+package com.anima;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
