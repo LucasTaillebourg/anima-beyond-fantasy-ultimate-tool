@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.anima</groupId>
-	<artifactId>anima</artifactId>
+	<artifactId>anima_newsletter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>anima</name>
-	<description>Demo project for Spring Boot</description>
+	<name>anima_newsletter</name>
+	<description>Anima newsletter project</description>
 
 	<properties>
 		<java.version>14</java.version>
