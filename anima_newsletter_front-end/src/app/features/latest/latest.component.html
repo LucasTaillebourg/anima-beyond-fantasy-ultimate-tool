@@ -1,9 +1,11 @@
 <ng-container *mobxAutorun>
-  <p>latest works! TEST</p>
-
+  COUCOU
   <ng-container *ngIf="latest">
-    <h1>{{latest.author}}</h1>
-    <h1>{{latest.title}}</h1>
-    <p>{{latest.content}}</p>
+    <div class="card latest">
+      <div class="card-body">
+        <h5 class="card-title">{{latest.author}} - {{latest.title}}</h5>
+        <p class="card-text">{{latest.content}}</p>
+      </div>
+    </div>
   </ng-container>
 </ng-container>

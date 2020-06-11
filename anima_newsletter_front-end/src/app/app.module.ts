@@ -7,6 +7,7 @@ import {RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import {CommonModule} from '@angular/common';
 import {MobxAngularModule} from 'mobx-angular';
+import {SharedModule} from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {MobxAngularModule} from 'mobx-angular';
     CommonModule,
     HttpClientModule,
     RouterModule.forRoot([]),
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
