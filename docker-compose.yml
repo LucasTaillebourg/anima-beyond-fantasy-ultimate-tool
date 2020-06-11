@@ -1,19 +1,25 @@
-version: '2'
+version: '2.1'
 
 services: 
   docker-mysql:
+    container_name: docker-mysql
     image: mysql:latest
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=test
       - MYSQL_PASSWORD=root
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 5s
+      retries: 20
   spring-docker-service:
     image: spring-docker-service
     build:
       context: ./anima_newsletter_backend
       dockerfile: ./Dockerfile
     depends_on:
-      - docker-mysql
+      docker-mysql: 
+        condition: service_healthy
     ports:
       - 7070:8080
     environment:
