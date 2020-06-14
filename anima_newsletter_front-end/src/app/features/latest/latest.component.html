@@ -1,8 +1,7 @@
 <ng-container *mobxAutorun>
-  <div *ngIf="latest" class="card latest latest-body">
-    <div class="card-body">
-      <h5 class="card-title">{{latest.author}} - {{latest.title}}</h5>
-      <p class="card-text">{{latest.content}}</p>
-    </div>
+  <div *ngIf="latest" class="latest latest-body">
+    <newsletter-news
+    [news]="latest">
+    </newsletter-news>
   </div>
 </ng-container>

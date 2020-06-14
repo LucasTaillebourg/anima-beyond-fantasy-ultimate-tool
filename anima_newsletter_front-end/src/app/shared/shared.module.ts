@@ -4,6 +4,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {MobxAngularModule} from 'mobx-angular';
 import {MenuComponent} from './menu/menu.component';
+import {NewsComponent} from './component/news/news.component';
 
 @NgModule({
   imports: [
@@ -18,8 +19,9 @@ import {MenuComponent} from './menu/menu.component';
     FormsModule,
     ReactiveFormsModule,
     MobxAngularModule,
-    MenuComponent
+    MenuComponent,
+    NewsComponent
   ],
-  declarations: [MenuComponent]
+  declarations: [MenuComponent, NewsComponent]
 })
 export class SharedModule {}

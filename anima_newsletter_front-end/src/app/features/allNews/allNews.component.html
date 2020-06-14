@@ -1,0 +1,7 @@
+<ng-container *mobxAutorun>
+  <div *ngIf="news" class="allNews allNews-body">
+    <newsletter-news *ngFor="let new of news"
+    [news]="new">
+    </newsletter-news>
+  </div>
+</ng-container>

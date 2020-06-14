@@ -8,14 +8,11 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Latest</a>
+      <li class="nav-item" (click)="goToLatest()">
+        <a class="nav-link">Latest</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">TODO</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">TODO</a>
+      <li class="nav-item" (click)="gotoAllNews()">
+        <a class="nav-link">All news</a>
       </li>
     </ul>
   </div>
