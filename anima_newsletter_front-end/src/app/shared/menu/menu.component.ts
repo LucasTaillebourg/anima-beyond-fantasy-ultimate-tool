@@ -16,4 +16,8 @@ export class MenuComponent {
   gotoAllNews() {
     this._router.navigate(['/allnews']);
   }
+
+  gotoAddNews() {
+    this._router.navigate(['/addnews']);
+  }
 }

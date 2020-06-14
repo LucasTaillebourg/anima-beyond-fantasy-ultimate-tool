@@ -4,7 +4,7 @@ import {RouterModule, Routes} from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'latest',
+    redirectTo: 'allnews',
     pathMatch: 'full'
   },
   {
@@ -16,6 +16,11 @@ export const routes: Routes = [
     path: 'allnews',
     // canActivate: [FeaturesGuard, CguGuard],
     loadChildren: () => import('./features/allNews/allNews.module').then(m => m.AllNewsModule)
+  },
+  {
+    path: 'addnews',
+    // canActivate: [FeaturesGuard, CguGuard],
+    loadChildren: () => import('./features/addNews/addNews.module').then(m => m.AddNewsModule)
   }
 ];
 

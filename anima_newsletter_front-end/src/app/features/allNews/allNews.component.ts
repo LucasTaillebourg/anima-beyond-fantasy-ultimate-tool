@@ -4,7 +4,7 @@ import {Subscriptor} from '../../utils';
 import {News} from '../../shared/models/news';
 
 @Component({
-  selector: 'app-latest',
+  selector: 'all-news',
   templateUrl: './allNews.component.html',
   styleUrls: ['./allNews.component.scss']
 })

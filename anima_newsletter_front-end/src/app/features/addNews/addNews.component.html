@@ -1,0 +1,17 @@
+<ng-container *mobxAutorun>
+  <div class="page-body add-news-page">
+    <div class="add-news-form">
+      <p>Enter news title : </p>
+      <input (keyup)="onKeyTitle($event)">
+      <p>Enter news author : </p>
+      <input (keyup)="onKeyAuthor($event)">
+      <p>Enter news Content : </p>
+      <input (keyup)="onKeyContent($event)">
+      <br>
+      <button type="button" class="btn btn-primary btn-lg" (click)="applyTheNews()">Apply the news</button>
+    </div>
+    <div>
+      <newsletter-news [news]="news"></newsletter-news>
+    </div>
+  </div>
+</ng-container>
