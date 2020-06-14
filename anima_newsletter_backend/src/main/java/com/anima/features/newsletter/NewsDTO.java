@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -16,6 +16,6 @@ public class NewsDTO {
     private String author;
     private String content;
     @JsonFormat(pattern="yyyy-MM-dd")
-    private Date creationDate;
+    private LocalDate creationDate;
 
 }

@@ -1,10 +1,7 @@
 package com.anima.features.newsletter;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -35,6 +32,13 @@ public class NewsLetterRest {
     @GetMapping("/allNews")
     public List<NewsDTO> allNews(){
         System.out.println("Request received : Get all news");
+        return newsLetterService.getAllNews();
+    }
+
+    @CrossOrigin
+    @PostMapping("/addNews")
+    public List<NewsDTO> addNews(@RequestBody NewsDTO news){
+        System.out.println("Request received : Add news");
         return newsLetterService.getAllNews();
     }
 }

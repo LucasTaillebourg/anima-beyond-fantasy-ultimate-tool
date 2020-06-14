@@ -1,5 +1,6 @@
 package com.anima.features.newsletter;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,6 +10,7 @@ import java.sql.Date;
 @Getter
 @Setter
 @Entity
+@Builder
 public class NewsEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)

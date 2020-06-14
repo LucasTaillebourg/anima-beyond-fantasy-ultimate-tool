@@ -3,8 +3,10 @@ package com.anima.features.newsletter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class NewsLetterService {
@@ -15,12 +17,7 @@ public class NewsLetterService {
     private NewsMapper newsMapper;
 
     public NewsDTO getLatest(){
-        return NewsDTO.builder()
-                .author("Hugo le belliqueux")
-                .title("Tfacon mon perso il est nul")
-                .content("Jsuis pas content mon perso il est nul, epuis il fait pas de degat, epuis je sert a rien, epuis jsuis pas content")
-                .id("0000")
-                .build();
+        return newsMapper.entityToDto(newsRepository.findLastNews());
     }
 
     public List<NewsDTO> getAllNews(){
@@ -28,5 +25,15 @@ public class NewsLetterService {
         List<NewsDTO> news = new ArrayList<>();
         newsEntitys.forEach(newsEntity -> news.add(newsMapper.entityToDto(newsEntity)));
         return news;
+    }
+
+    public void addNews(NewsDTO news){
+        news.setId(UUID.randomUUID().toString());
+        news.setCreationDate(LocalDate.now());
+
+        NewsEntity newsEntity = newsMapper.dtoToEntity(news);
+        System.out.println(newsEntity);
+
+        //TODO INSERT TABLE
     }
 }
