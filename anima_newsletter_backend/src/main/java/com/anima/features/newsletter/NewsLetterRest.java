@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class NewsLetterRest {
 
@@ -13,9 +15,9 @@ public class NewsLetterRest {
     private NewsLetterService newsLetterService;
 
     @GetMapping("/news")
-    public News health(@RequestParam( value = "title") String title, @RequestParam( value = "author") String author, @RequestParam( value = "content") String content)  {
+    public NewsDTO health(@RequestParam( value = "title") String title, @RequestParam( value = "author") String author, @RequestParam( value = "content") String content)  {
 
-        return News.builder()
+        return NewsDTO.builder()
                 .author(author)
                 .title(title)
                 .content(content)
@@ -24,8 +26,15 @@ public class NewsLetterRest {
 
     @CrossOrigin
     @GetMapping("/latestTest")
-    public News latest(){
-        System.out.println("Request received");
+    public NewsDTO latest(){
+        System.out.println("Request received : get latest");
         return newsLetterService.getLatest();
+    }
+
+    @CrossOrigin
+    @GetMapping("/allNews")
+    public List<NewsDTO> allNews(){
+        System.out.println("Request received : Get all news");
+        return newsLetterService.getAllNews();
     }
 }
