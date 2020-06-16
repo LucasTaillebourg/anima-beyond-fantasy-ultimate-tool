@@ -16,7 +16,7 @@ export class LatestStore {
   @action
   fetchLatest(): Observable<News> {
     return this._http
-      .get<News>('http://localhost:7070/latestTest')
+      .get<News>('http://localhost:7070/latestNews')
       .pipe(bindAction( (res: News ) => (this.latest = res)));
   }
 }

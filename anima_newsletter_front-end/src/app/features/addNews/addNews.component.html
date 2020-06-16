@@ -1,17 +1,28 @@
 <ng-container *mobxAutorun>
   <div class="page-body add-news-page">
     <div class="add-news-form">
-      <p>Enter news title : </p>
-      <input (keyup)="onKeyTitle($event)">
-      <p>Enter news author : </p>
-      <input (keyup)="onKeyAuthor($event)">
-      <p>Enter news Content : </p>
-      <input (keyup)="onKeyContent($event)">
+      <div class="add-news-field">
+        <p>Enter news title : </p>
+        <input [(ngModel)]="news.title">
+      </div>
+      <div class="add-news-field">
+        <p>Enter news author : </p>
+        <input [(ngModel)]="news.author">
+      </div>
+      <div class="add-news-field">
+        <p>Enter news Content : </p>
+        <textarea [(ngModel)]="news.content"></textarea>
+      </div>
       <br>
       <button type="button" class="btn btn-primary btn-lg" (click)="applyTheNews()">Apply the news</button>
     </div>
-    <div>
+    <div class="add-news-form">
+      <p> Voici la news qui va être générée : </p>
       <newsletter-news [news]="news"></newsletter-news>
+    </div>
+    <div *ngIf="generatedNews" class="add-news-form">
+      <p> Voici la news qui viens d'être générée : </p>
+      <newsletter-news [news]="generatedNews"></newsletter-news>
     </div>
   </div>
 </ng-container>

@@ -10,15 +10,17 @@ export class AddNewsStore {
   @observable
   news: News = null;
 
+  @observable
+  insertednews: News = null;
+
   constructor(private _http: HttpClient) {}
 
   @action
   sendTheNews(news: News): Observable<News> {
-    console.log('coucou');
-    this.news = news;
-    const body = { news: news};
+    this.insertednews = null;
+    news.creationDate = null;
     return this._http
-      .put<News>('http://localhost:7070/addNews', body)
-      .pipe(bindAction( (res: News ) => (this.news = res)));
+      .put<News>('http://localhost:7070/addNews', news)
+      .pipe(bindAction( (res: News ) => (this.insertednews = res)));
   }
 }

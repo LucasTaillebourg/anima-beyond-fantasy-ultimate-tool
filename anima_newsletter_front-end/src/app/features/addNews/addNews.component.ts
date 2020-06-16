@@ -13,29 +13,27 @@ export class AddNewsComponent implements OnInit, OnDestroy {
   private _subscriptor: Subscriptor = new Subscriptor();
 
   news: News = {
-    id: 'NOT SET HERE',
+    UUID: 'NOT SET HERE',
     creationDate: 'Waiting applying',
     content: 'Content',
     author: 'Author',
     title: 'Title'
   };
 
-  onKeyTitle(event: any) { // without type info
-    this.news.title = event.target.value;
-  }
-
-  onKeyAuthor(event: any) { // without type info
-    this.news.author = event.target.value;
-  }
-
-  onKeyContent(event: any) { // without type info
-    this.news.content = event.target.value;
+  get generatedNews(): News {
+    return this.addNewsStore.insertednews;
   }
 
   constructor(private addNewsStore: AddNewsStore) {}
 
   applyTheNews(): void {
-    this.addNewsStore.sendTheNews(this.news);
+    this.addNewsStore.sendTheNews(this.news).subscribe(res => this.news = {
+      UUID: 'NOT SET HERE',
+      creationDate: 'Waiting applying',
+      content: 'Content',
+      author: 'Author',
+      title: 'Title'
+    });
   }
 
   ngOnInit(): void {

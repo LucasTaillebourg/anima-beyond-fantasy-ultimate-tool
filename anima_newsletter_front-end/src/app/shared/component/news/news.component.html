@@ -2,6 +2,6 @@
   <div class="card-body">
     <h5 class="card-title">{{news.title}} par : {{news.author}} </h5>
     <p class="card-text">{{news.content}}</p>
-    <p class="card-text">Ecrit le : {{news.creationDate}} </p>
+    <p class="card-text">Ecrit le : {{news.creationDate | date: 'yyyy-MM-dd'}} à {{news.creationDate | date: 'h:mm:ss'}}  </p>
   </div>
 </div>
