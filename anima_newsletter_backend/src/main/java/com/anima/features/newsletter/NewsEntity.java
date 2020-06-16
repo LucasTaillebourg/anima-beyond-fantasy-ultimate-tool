@@ -20,6 +20,6 @@ public class NewsEntity {
     private String title;
     private String author;
     private String content;
-    private Date creationDate;
+    private long creationDate;
     private String UUID;
 }

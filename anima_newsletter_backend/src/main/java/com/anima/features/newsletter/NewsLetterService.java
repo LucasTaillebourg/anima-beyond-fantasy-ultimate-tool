@@ -20,12 +20,7 @@ public class NewsLetterService {
     @Autowired
     private NewsMapper newsMapper;
     @Autowired
-    private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
-    @Autowired
     private NewsRepositoryJPA newsRepositoryJPA;
-
-    private final String INSERT_SQL = "INSERT INTO NEWS (id, title, author, content, creation_date) " +
-            "values(:id,:title,:author,:content ,:creationDate )";
 
     public NewsDTO getLatest(){
         return newsMapper.entityToDto(newsRepository.findLastNews());
@@ -38,16 +33,10 @@ public class NewsLetterService {
         return news;
     }
 
-    public void addNews(NewsDTO news){
-        System.out.println("Generation UUID");
+    public NewsDTO addNews(NewsDTO news){
         news.setUUID(UUID.randomUUID().toString());
-        System.out.println(news.getUUID());
-        news.setCreationDate(new Date(Calendar.getInstance().getTime().getTime()));
-
-        System.out.println("TO ENTITY");
-        NewsEntity newsEntity = newsMapper.dtoToEntity(news);
-        System.out.println("SEND TO ADD NEWS");
-
-        newsRepositoryJPA.addNews(newsEntity);
+        news.setCreationDate(Calendar.getInstance().getTime().getTime());
+        newsRepositoryJPA.addNews(newsMapper.dtoToEntity(news));
+        return news;
     }
 }

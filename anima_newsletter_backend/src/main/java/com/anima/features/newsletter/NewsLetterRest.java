@@ -37,8 +37,8 @@ public class NewsLetterRest {
 
     @CrossOrigin
     @PutMapping("/addNews")
-    public void addNews(@RequestBody NewsDTO news){
+    public NewsDTO addNews(@RequestBody NewsDTO news){
         System.out.println("Request received : Add news");
-        newsLetterService.addNews(news);
+        return newsLetterService.addNews(news);
     }
 }
