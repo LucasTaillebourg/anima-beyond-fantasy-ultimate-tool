@@ -9,18 +9,19 @@ public class NewsMapper {
         return NewsDTO.builder()
                 .author(newsEntity.getAuthor())
                 .content(newsEntity.getContent())
-                .creationDate(newsEntity.getCreationDate().toLocalDate())
-                .id(newsEntity.getId().toString())
+                .creationDate(newsEntity.getCreationDate())
+                .UUID(newsEntity.getUUID())
                 .title(newsEntity.getTitle())
                 .build();
     }
 
     public NewsEntity dtoToEntity(NewsDTO newsDTO){
+        System.out.println(newsDTO.getUUID());
         return NewsEntity.builder()
                 .author(newsDTO.getAuthor())
                 .content(newsDTO.getContent())
-                .creationDate(java.sql.Date.valueOf(newsDTO.getCreationDate()))
-                .id(Integer.valueOf(newsDTO.getId()))
+                .creationDate(newsDTO.getCreationDate())
+                .UUID(newsDTO.getUUID())
                 .title(newsDTO.getTitle())
                 .build();
     }

@@ -14,9 +14,11 @@ export class AddNewsStore {
 
   @action
   sendTheNews(news: News): Observable<News> {
+    console.log('coucou');
     this.news = news;
+    const body = { news: news};
     return this._http
-      .post<News>('http://localhost:7070/addNews', this.news)
+      .put<News>('http://localhost:7070/addNews', body)
       .pipe(bindAction( (res: News ) => (this.news = res)));
   }
 }

@@ -5,17 +5,16 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
+import java.sql.Date;
 
 @Getter
 @Setter
 @Builder
 public class NewsDTO {
-    private String id;
+    private String UUID;
     private String title;
     private String author;
     private String content;
-    @JsonFormat(pattern="yyyy-MM-dd")
-    private LocalDate creationDate;
+    private Date creationDate;
 
 }

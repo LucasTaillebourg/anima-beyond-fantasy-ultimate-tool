@@ -1,8 +1,6 @@
 package com.anima.features.newsletter;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -10,8 +8,11 @@ import java.sql.Date;
 @Getter
 @Setter
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class NewsEntity {
+
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
@@ -20,4 +21,5 @@ public class NewsEntity {
     private String author;
     private String content;
     private Date creationDate;
+    private String UUID;
 }

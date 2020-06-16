@@ -22,7 +22,7 @@ public class NewsLetterRest {
     }
 
     @CrossOrigin
-    @GetMapping("/latestTest")
+    @GetMapping("/latestNews")
     public NewsDTO latest(){
         System.out.println("Request received : get latest");
         return newsLetterService.getLatest();
@@ -36,9 +36,9 @@ public class NewsLetterRest {
     }
 
     @CrossOrigin
-    @PostMapping("/addNews")
-    public List<NewsDTO> addNews(@RequestBody NewsDTO news){
+    @PutMapping("/addNews")
+    public void addNews(@RequestBody NewsDTO news){
         System.out.println("Request received : Add news");
-        return newsLetterService.getAllNews();
+        newsLetterService.addNews(news);
     }
 }
