@@ -6,7 +6,7 @@ services:
     image: mysql:latest
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=test
+      - MYSQL_DATABASE=anima_newsletter
       - MYSQL_PASSWORD=root
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
@@ -21,13 +21,13 @@ services:
       docker-mysql: 
         condition: service_healthy
     ports:
-      - 7070:8080
+      - 8081:8080
     environment:
       - CATALINA_OPTS=-Dspring.profiles.active=container
       - DATABASE_HOST=docker-mysql
       - DATABASE_USER=root
       - DATABASE_PASSWORD=root
-      - DATABASE_NAME=test  
+      - DATABASE_NAME=anima_newsletter  
       - DATABASE_PORT=3306
   angular-docker-service:
     image: angular-docker-service

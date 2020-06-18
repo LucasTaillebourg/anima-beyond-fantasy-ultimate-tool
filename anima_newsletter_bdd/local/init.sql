@@ -1,6 +1,4 @@
-USE test;
-
-DROP TABLE NEWS;
+USE anima_newsletter;
 
 CREATE TABLE NEWS (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,

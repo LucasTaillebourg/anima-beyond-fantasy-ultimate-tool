@@ -6,7 +6,7 @@ services:
     image: mysql:latest
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=test
+      - MYSQL_DATABASE=anima_newsletter
       - MYSQL_PASSWORD=root
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
