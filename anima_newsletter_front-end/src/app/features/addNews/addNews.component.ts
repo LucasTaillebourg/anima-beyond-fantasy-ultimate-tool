@@ -29,7 +29,7 @@ export class AddNewsComponent implements OnInit, OnDestroy {
   applyTheNews(): void {
     this.addNewsStore.sendTheNews(this.news).subscribe(res => this.news = {
       UUID: 'NOT SET HERE',
-      creationDate: 'Waiting applying',
+      creationDate: '',
       content: 'Content',
       author: 'Author',
       title: 'Title'

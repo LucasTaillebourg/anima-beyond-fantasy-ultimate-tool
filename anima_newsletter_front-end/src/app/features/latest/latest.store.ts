@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {News} from '../../shared/models';
 import {bindAction} from '../../utils';
+import {environment} from '../../../environments/environment';
 
 @Injectable()
 export class LatestStore {
@@ -16,7 +17,7 @@ export class LatestStore {
   @action
   fetchLatest(): Observable<News> {
     return this._http
-      .get<News>('http://localhost:7070/latestNews')
+      .get<News>('http://' + environment.newsletter_backend + '/latestNews')
       .pipe(bindAction( (res: News ) => (this.latest = res)));
   }
 }

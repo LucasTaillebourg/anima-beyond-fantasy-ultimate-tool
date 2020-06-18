@@ -4,6 +4,7 @@ import {News} from '../../shared/models/news';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {bindAction} from '../../utils';
+import {environment} from '../../../environments/environment';
 
 @Injectable()
 export class AddNewsStore {
@@ -20,7 +21,7 @@ export class AddNewsStore {
     this.insertednews = null;
     news.creationDate = null;
     return this._http
-      .put<News>('http://localhost:7070/addNews', news)
+      .put<News>('http://' + environment.newsletter_backend + '/addNews', news)
       .pipe(bindAction( (res: News ) => (this.insertednews = res)));
   }
 }

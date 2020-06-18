@@ -4,6 +4,7 @@ import {News} from '../../shared/models/news';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {bindAction} from '../../utils';
+import {environment} from '../../../environments/environment';
 
 @Injectable()
 export class AllNewsStore {
@@ -15,7 +16,7 @@ export class AllNewsStore {
   @action
   fetchAllNews(): Observable<News[]> {
     return this._http
-      .get<News[]>('http://localhost:7070/allNews')
+      .get<News[]>('http://' + environment.newsletter_backend + '/allNews')
       .pipe(bindAction( (res: News[] ) => (this.news = res)));
   }
 }
