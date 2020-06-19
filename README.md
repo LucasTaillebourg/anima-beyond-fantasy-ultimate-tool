@@ -11,7 +11,7 @@ Execute init.sh
 
 ## Then the back office : 
 In the backoffice folder : 
-Execute: mvn clean install -DskipTest
+Execute: mvn clean install -DskipTests
 Start the back office with the profile local
 
 In intellij : just write local in the run configuration active profile field then start it
