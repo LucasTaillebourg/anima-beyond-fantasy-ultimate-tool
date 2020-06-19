@@ -32,8 +32,7 @@ public class NewsLetterService {
     public NewsDTO addNews(NewsDTO news){
         news.setUUID(UUID.randomUUID().toString());
         news.setCreationDate(Calendar.getInstance().getTime().getTime());
-        return newsMapper.entityToDto(newsRepository.save(newsMapper.dtoToEntity(news)));
-//        newsRepositoryJPA.addNews(newsMapper.dtoToEntity(news));
-//        return news;
+        newsRepositoryJPA.addNews(newsMapper.dtoToEntity(news));
+        return news;
     }
 }
