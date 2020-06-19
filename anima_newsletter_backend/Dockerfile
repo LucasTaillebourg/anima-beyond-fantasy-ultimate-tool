@@ -5,4 +5,4 @@ COPY ./ /app
 WORKDIR /app
 RUN ./mvnw package -Dmaven.test.skip=true
 RUN mv ${JAR_FILE} ./app.jar
-ENTRYPOINT ["sh", "-c", "java -jar ./app.jar"]
+ENTRYPOINT ["sh", "-c", "java -jar ./app.jar --spring.profiles.active=docker"]
