@@ -6,13 +6,14 @@ import {News} from '../../shared/models/news';
 @Component({
   selector: 'latest-news',
   templateUrl: './latest.component.html',
-  styleUrls: ['./latest.component.scss']
+  styleUrls: ['./latest.component.scss'],
 })
 export class LatestComponent implements OnInit, OnDestroy {
 
   private _subscriptor: Subscriptor = new Subscriptor();
 
   constructor(private _latestStore: LatestStore) {}
+
 
   ngOnInit(): void {
     this._subscriptor.trigger(this._latestStore.fetchLatest());

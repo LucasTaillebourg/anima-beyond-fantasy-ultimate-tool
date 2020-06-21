@@ -3,6 +3,7 @@ import {AllNewsStore} from './allNews.store';
 import {Subscriptor} from '../../utils';
 import {News} from '../../shared/models/news';
 
+
 @Component({
   selector: 'all-news',
   templateUrl: './allNews.component.html',
@@ -11,8 +12,8 @@ import {News} from '../../shared/models/news';
 export class AllNewsComponent implements OnInit, OnDestroy {
 
   private _subscriptor: Subscriptor = new Subscriptor();
-
   constructor(private _allNewsStore: AllNewsStore) {}
+
 
   ngOnInit(): void {
     this._subscriptor.trigger(this._allNewsStore.fetchAllNews());
