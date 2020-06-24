@@ -18,6 +18,7 @@ public class NewsEntity {
     private Integer id;
     private String title;
     private String author;
+    private String about;
     private String content;
     private long creationDate;
     private String UUID;

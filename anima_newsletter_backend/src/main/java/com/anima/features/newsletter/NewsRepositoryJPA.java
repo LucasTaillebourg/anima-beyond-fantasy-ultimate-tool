@@ -14,12 +14,13 @@ public class NewsRepositoryJPA {
 
     @Transactional
     public void addNews(NewsEntity newsEntity){
-        entityManager.createNativeQuery("INSERT INTO NEWS (title, author, content, creation_date, UUID) VALUES (?,?,?,?,?)")
+        entityManager.createNativeQuery("INSERT INTO NEWS (title, author, about, content, creation_date, UUID) VALUES (?,?,?,?,?,?)")
                 .setParameter(1, newsEntity.getTitle())
                 .setParameter(2, newsEntity.getAuthor())
-                .setParameter(3, newsEntity.getContent())
-                .setParameter(4, newsEntity.getCreationDate())
-                .setParameter(5, newsEntity.getUUID())
+                .setParameter(3, newsEntity.getAbout())
+                .setParameter(4, newsEntity.getContent())
+                .setParameter(5, newsEntity.getCreationDate())
+                .setParameter(6, newsEntity.getUUID())
                 .executeUpdate();
     }
 }

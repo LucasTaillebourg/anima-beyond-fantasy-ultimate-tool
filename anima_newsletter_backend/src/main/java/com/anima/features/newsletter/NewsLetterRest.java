@@ -12,10 +12,11 @@ public class NewsLetterRest {
     private NewsLetterService newsLetterService;
 
     @GetMapping("/news")
-    public NewsDTO health(@RequestParam( value = "title") String title, @RequestParam( value = "author") String author, @RequestParam( value = "content") String content)  {
+    public NewsDTO health(@RequestParam( value = "title") String title, @RequestParam( value = "author") String author, @RequestParam( value = "about") String about, @RequestParam( value = "content") String content)  {
 
         return NewsDTO.builder()
                 .author(author)
+                .about(about)
                 .title(title)
                 .content(content)
                 .build();

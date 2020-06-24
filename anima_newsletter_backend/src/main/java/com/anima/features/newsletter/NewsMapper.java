@@ -8,6 +8,7 @@ public class NewsMapper {
     public NewsDTO entityToDto(NewsEntity newsEntity){
         return NewsDTO.builder()
                 .author(newsEntity.getAuthor())
+                .about(newsEntity.getAbout())
                 .content(newsEntity.getContent())
                 .creationDate(newsEntity.getCreationDate())
                 .UUID(newsEntity.getUUID())
@@ -19,6 +20,7 @@ public class NewsMapper {
         System.out.println(newsDTO.getUUID());
         return NewsEntity.builder()
                 .author(newsDTO.getAuthor())
+                .about(newsDTO.getAbout())
                 .content(newsDTO.getContent())
                 .creationDate(newsDTO.getCreationDate())
                 .UUID(newsDTO.getUUID())

@@ -16,6 +16,7 @@ export class AddNewsComponent implements OnInit, OnDestroy {
     UUID: 'NOT SET HERE',
     creationDate: 'Waiting applying',
     content: 'Content',
+    about: 'About',
     author: 'Author',
     title: 'Title'
   };
@@ -31,6 +32,7 @@ export class AddNewsComponent implements OnInit, OnDestroy {
       UUID: 'NOT SET HERE',
       creationDate: '',
       content: 'Content',
+      about: 'About',
       author: 'Author',
       title: 'Title'
     });
