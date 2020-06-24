@@ -42,4 +42,11 @@ public class NewsLetterRest {
         System.out.println("Request received : Add news");
         return newsLetterService.addNews(news);
     }
+
+    @CrossOrigin
+    @GetMapping("/allNewsByAuthor")
+    public List<NewsDTO> allNewsByAuthor(@RequestParam( value = "author") String author){
+        System.out.println("Request received : Get all news By author : " + author);
+        return newsLetterService.getAllNewsByAuthor(author);
+    }
 }

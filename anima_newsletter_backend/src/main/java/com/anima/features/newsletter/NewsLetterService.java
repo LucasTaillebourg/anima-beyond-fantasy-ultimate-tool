@@ -23,9 +23,8 @@ public class NewsLetterService {
     }
 
     public List<NewsDTO> getAllNews(){
-        Iterable<NewsEntity> newsEntitys = newsRepository.findAllNews();
         List<NewsDTO> news = new ArrayList<>();
-        newsEntitys.forEach(newsEntity -> news.add(newsMapper.entityToDto(newsEntity)));
+        newsRepository.findAllNews().forEach(newsEntity -> news.add(newsMapper.entityToDto(newsEntity)));
         return news;
     }
 
@@ -35,4 +34,11 @@ public class NewsLetterService {
         newsRepositoryJPA.addNews(newsMapper.dtoToEntity(news));
         return news;
     }
+
+    public List<NewsDTO> getAllNewsByAuthor(String author){
+        List<NewsDTO> news = new ArrayList<>();
+        newsRepository.getAllNewsByAuthor(author).forEach(newsEntity -> news.add(newsMapper.entityToDto(newsEntity)));
+        return news;
+    }
+
 }
