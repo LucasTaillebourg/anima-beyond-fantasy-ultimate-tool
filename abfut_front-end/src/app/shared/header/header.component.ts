@@ -1,13 +1,18 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
 
+
 @Component({
-  selector: 'newsletter-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  selector: 'abfut-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
-export class MenuComponent {
+export class HeaderComponent {
   constructor(private _router: Router) { }
+
+  goToHome() {
+    this._router.navigate(['/']);
+  }
 
   goToLatest() {
     this._router.navigate(['/latest']);

@@ -3,8 +3,8 @@ import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {MobxAngularModule} from 'mobx-angular';
-import {MenuComponent} from './menu/menu.component';
 import {NewsComponent} from './component/news/news.component';
+import {HeaderComponent} from './header/header.component';
 
 @NgModule({
   imports: [
@@ -19,9 +19,9 @@ import {NewsComponent} from './component/news/news.component';
     FormsModule,
     ReactiveFormsModule,
     MobxAngularModule,
-    MenuComponent,
-    NewsComponent
+    NewsComponent,
+    HeaderComponent
   ],
-  declarations: [MenuComponent, NewsComponent]
+  declarations: [NewsComponent, HeaderComponent]
 })
 export class SharedModule {}
