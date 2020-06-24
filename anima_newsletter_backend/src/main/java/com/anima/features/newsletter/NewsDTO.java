@@ -13,6 +13,7 @@ public class NewsDTO {
     private String UUID;
     private String title;
     private String author;
+    private String about;
     private String content;
     private long creationDate;
 }
