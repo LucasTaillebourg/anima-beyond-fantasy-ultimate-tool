@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.anima</groupId>
-	<artifactId>anima_newsletter</artifactId>
+	<artifactId>abfut</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>anima_newsletter</name>
+	<name>Anima_Beyond_Fantasy_Ultimate_Tool</name>
 	<description>Anima newsletter project</description>
 
 	<properties>
@@ -67,7 +67,15 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-		</plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>13</source>
+                    <target>13</target>
+                </configuration>
+            </plugin>
+        </plugins>
 	</build>
 
 </project>

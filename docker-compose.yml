@@ -6,16 +6,16 @@ services:
     image: mysql:latest
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=anima_newsletter
+      - MYSQL_DATABASE=abfut
       - MYSQL_PASSWORD=root
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
       timeout: 5s
       retries: 20
   spring-docker-service:
-    image: spring-docker-service
+    image: abfut-be-docker-service
     build:
-      context: ./anima_newsletter_backend
+      context: ./abfut_back-end
       dockerfile: ./Dockerfile
     depends_on:
       docker-mysql: 
@@ -27,12 +27,12 @@ services:
       - DATABASE_HOST=docker-mysql
       - DATABASE_USER=root
       - DATABASE_PASSWORD=root
-      - DATABASE_NAME=anima_newsletter  
+      - DATABASE_NAME=abfut 
       - DATABASE_PORT=3306
   angular-docker-service:
-    image: angular-docker-service
+    image: abfut-fe-docker-service
     build:
-      context: ./anima_newsletter_front-end
+      context: ./abfut_front-end
       dockerfile: ./Dockerfile
     ports:
       - 4200:80
