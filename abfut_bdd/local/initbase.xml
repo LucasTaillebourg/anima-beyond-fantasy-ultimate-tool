@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<databaseChangeLog   
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"   
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">   
+
+<changeSet author=”Hugo” id=”v1”>
+  <createTable tableName=”NEWS”>
+    <column autoIncrement=”true” name =”id” type=”INTEGER”>
+      <constraints nullable=”false” primaryKey=”true” primaryKeyName=”news_pkey”/>
+    </column>
+    <column name=”title” type=”TEXT”/>
+    <column name=”author” type=”TEXT”/>
+    <column name=”content” type="TEXT”/>
+    <column name=”creation_date” type=”BIGINT UNSIGNED”/>
+    <column name=”UUID” type=”TEXT”/>
+  </createTable>
+</changeSet>
+
+</databaseChangeLog> 
