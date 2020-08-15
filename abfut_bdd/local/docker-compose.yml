@@ -14,3 +14,12 @@ services:
       retries: 20
     ports:
     - 3306:3306
+  docker-liquidbase:
+    container_name: docker-liquibase
+    image: abfut-local-docker-liquibase
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    depends_on:
+      docker-mysql: 
+        condition: service_healthy

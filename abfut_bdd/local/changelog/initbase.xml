@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<databaseChangeLog   
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"   
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">   
+
+<changeSet  id="1"  author="Hugo">  
+    <createTable  tableName="NEWS">  
+        <column  name="id"  type="int"  autoIncrement="true">  
+            <constraints  primaryKey="true"  nullable="false"/>  
+        </column>  
+        <column  name="title"  type="TEXT"/>  
+        <column  name="author"  type="TEXT"/>  
+        <column  name="content"  type="TEXT"/>  
+        <column  name="creation_date"  type="BIGINT UNSIGNED"/>  
+        <column  name="UUID"  type="TEXT"/>  
+    </createTable>  
+    <insert tableName="NEWS">
+        <column name="title" value="Mon perso il est nul"/>
+        <column name="author" value="Hugo"/>
+        <column name="content" value="Jsuis pas content mon perso  il est nul, epuis il fait pas de degat, epuis je sert a rien, epuis jsuis pas content"/>
+        <column name="creation_date" value="4"/>
+        <column name="UUID" value="123e4567-e89b-12d3-a456-426614174000"/>
+    </insert>
+    <insert tableName="NEWS">  
+        <column name="title" value="J'ai un early de merde"/>
+        <column name="author" value="Lucas"/>
+        <column name="content" value="J ai vraiment un early de merde, je pu du fion"/>
+        <column name="creation_date" value="1"/>
+        <column name="UUID" value="123e4567-e89b-12d3-a456-426614174001"/>
+    </insert>
+    <insert tableName="NEWS">
+        <column name="title" value="Comment j ai controlle Nhorus sans qu il le sache"/>
+        <column name="author" value="Romain"/>
+        <column name="content" value="Personne a jamais remarque MDR"/>
+        <column name="creation_date" value="5"/>
+        <column name="UUID" value="123e4567-e89b-12d3-a456-426614174002"/>
+    </insert>
+</changeSet>  
+</databaseChangeLog> 
